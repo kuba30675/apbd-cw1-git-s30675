@@ -3,6 +3,7 @@ public class Rectangle extends Shape{
     private double b;
 
     public Rectangle(double a, double b) {
+        super(SHAPETYPE.RECTANGLE);
         this.a = a;
         this.b = b;
     }

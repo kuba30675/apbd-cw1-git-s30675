@@ -3,6 +3,7 @@ public class Triangle extends Shape{
     private double a;
 
     public Triangle(double a) {
+        super(SHAPETYPE.TRIANGLE);
         this.a = a;
     }
 

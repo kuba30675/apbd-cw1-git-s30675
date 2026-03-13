@@ -2,6 +2,7 @@ public class Square extends Shape{
     private final double a;
 
     public Square(double a) {
+        super(SHAPETYPE.SQUARE);
         this.a = a;
     }
 
