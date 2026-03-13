@@ -19,4 +19,11 @@ public class Circle extends Shape {
     public double calculateCircuit() {
         return 2 * Math.PI * radius;
     }
+
+    @Override
+    public String toString() {
+        return "Circle{" +
+                "radius=" + radius +
+                '}';
+    }
 }

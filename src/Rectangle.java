@@ -25,4 +25,12 @@ public class Rectangle extends Shape{
     public double calculateCircuit() {
         return 2 * a + 2 * b;
     }
+
+    @Override
+    public String toString() {
+        return "Rectangle{" +
+                "a=" + a +
+                ", b=" + b +
+                '}';
+    }
 }

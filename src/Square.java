@@ -11,6 +11,13 @@ public class Square extends Shape{
     }
 
     @Override
+    public String toString() {
+        return "Square{" +
+                "a=" + a +
+                '}';
+    }
+
+    @Override
     public double calculateField() {
         return a * a;
     }

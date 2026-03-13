@@ -26,4 +26,12 @@ public class Triangle extends Shape{
     public double calculateCircuit() {
         return 3 * a;
     }
+
+    @Override
+    public String toString() {
+        return "Triangle{" +
+                "a=" + a +
+                ", height=" + height +
+                '}';
+    }
 }
