@@ -95,11 +95,11 @@ public final class ShapesStatistics {
 
     public static double calculateMin(int[] values){
         if (values.length == 0) return 0;
-        double max = values[0];
-        for (int i = 0; i < 10; i++) {
-            System.out.println("NOT DONE YET");
+        double min = values[0];
+        for (int i = 1; i < values.length; i++) {
+            if(values[i] < min) min = values[i];
         }
-        return 0;
+        return min;
     }
 
 
