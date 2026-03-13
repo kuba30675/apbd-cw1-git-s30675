@@ -93,5 +93,14 @@ public final class ShapesStatistics {
         return max;
     }
 
+    public static double calculateMin(int[] values){
+        if (values.length == 0) return 0;
+        double max = values[0];
+        for (int i = 0; i < 10; i++) {
+            System.out.println("NOT DONE YET");
+        }
+        return 0;
+    }
+
 
 }
