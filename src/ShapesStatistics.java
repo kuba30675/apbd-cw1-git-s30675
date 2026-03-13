@@ -1,7 +1,4 @@
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public final class ShapesStatistics {
@@ -27,4 +24,59 @@ public final class ShapesStatistics {
                         )
                 );
     }
+
+
+    public static Map<Boolean, List<Shape>> circuitGreaterThan(List<Shape> list, double threshold){
+        return list.stream()
+                .collect(
+                        Collectors.partitioningBy(
+                                (Shape s) -> s.calculateCircuit() > threshold
+                        )
+                );
+    }
+
+    public static Map<SHAPETYPE, Map<String, Double>> shapetypeStats(Collection<Shape> shapeColl){
+        return shapeColl.stream()
+                .collect(
+                        Collectors.groupingBy(
+                                Shape::getType,
+                                Collectors.collectingAndThen(
+                                        Collectors.toList(),
+                                        list -> {
+                                            Map<String,Double> res = new HashMap<>();
+                                            res.put(
+                                                    "totalField",
+                                                    list.stream()
+                                                            .mapToDouble(Shape::calculateField)
+                                                            .sum()
+                                            );
+
+                                            res.put(
+                                                    "totalCircuit",
+                                                    list.stream()
+                                                            .mapToDouble(Shape::calculateField)
+                                                            .sum()
+                                            );
+
+                                            res.put(
+                                                    "averageField",
+                                                    list.stream()
+                                                            .mapToDouble(Shape::calculateField)
+                                                            .average().orElse(0)
+                                            );
+
+                                            res.put(
+                                                    "minField",
+                                                    list.stream()
+                                                            .mapToDouble(Shape::calculateField)
+                                                            .min().orElse(0)
+                                            );
+                                            return res;
+                                        }
+                                )
+                        )
+                );
+    }
+
+
 }
