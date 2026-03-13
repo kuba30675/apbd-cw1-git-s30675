@@ -96,8 +96,8 @@ public final class ShapesStatistics {
     public static double calculateMin(int[] values){
         if (values.length == 0) return 0;
         double min = values[0];
-        for (int i = 1; i < values.length; i++) {
-            if(values[i] < min) min = values[i];
+        for (int z = 1; z < values.length; z++) {
+            if(values[z] < min) min = values[z];
         }
         return min;
     }
