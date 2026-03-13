@@ -84,5 +84,14 @@ public final class ShapesStatistics {
         return ((double)sum) / values.length;
     }
 
+    public static double calculateMax(int[] values){
+        if (values.length == 0) return 0;
+        double max = values[0];
+        for (int i = 1; i < values.length; i++) {
+            if(values[i] > max) max = values[i];
+        }
+        return max;
+    }
+
 
 }
