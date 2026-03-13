@@ -78,5 +78,11 @@ public final class ShapesStatistics {
                 );
     }
 
+    public static double calculateAverage(int[] values){
+        int sum = 0;
+        for(int x : values) sum += x;
+        return ((double)sum) / values.length;
+    }
+
 
 }
